@@ -2,13 +2,6 @@ pipeline{
     agent any
     
     stages{
-        
-        stage('build maven'){
-            steps{
-                sh 'echo in build stage'
-            }
-            
-        }
         stage('calling docker file'){
             steps{
                 script{
@@ -27,7 +20,11 @@ pipeline{
                    
                 }
             }
-        }    
+        } 
+        stage('create container'){
+          sh 'docker container run -dt --name jenkins -p 8000:80 swathiranga/javawebcalculator'    
+        }
+        
     }
         
     
