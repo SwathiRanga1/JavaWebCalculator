@@ -5,6 +5,7 @@ pipeline{
         stage('calling docker file'){
             steps{
                 script{
+                    echo 'scm polling working'
                     sh 'docker build -t swathiranga/javawebcalculator .'
                 }
             }
