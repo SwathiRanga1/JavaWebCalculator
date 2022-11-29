@@ -23,7 +23,7 @@ pipeline{
         } 
         stage('create container'){
             steps {
-          sh 'docker container run -dt --name jenkins -p 8000:8080 swathiranga/javawebcalculator'    
+          sh 'docker container run -dt --name jenkins1 -p 8000:8080 swathiranga/javawebcalculator'    
             }
             }
         
